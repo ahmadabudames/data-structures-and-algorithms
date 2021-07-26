@@ -75,6 +75,12 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 - **Run filtered tests** - `pytest -k some_filter_text`
 - **Run in watch mode** - `ptw` or `pytest-watch`
 
-# the soultion :-
 
-![array-reverse](array-reverse/Untitled.jpg)
+# the solution:-
+
+![array-reverse](insert_shift_list/image.jpg)
+
+
+
+
+
