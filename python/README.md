@@ -77,6 +77,6 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 # the solution:-
 
-![array-reverse](insert_shift_list/image.jpg)
+![array-binary-search](array-binary-search/array-binary-search.jpg)
 
 
