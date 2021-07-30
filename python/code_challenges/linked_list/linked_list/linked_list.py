@@ -37,9 +37,9 @@ class LinkedList:
         while current:
             value = current.value
             if current.next is None:
-                output += f"( {value} ) -> none"
+                output += f"({value}) -> none"
                 break
-            output = output + f"( {value} ) -> "
+            output = output + f"({value}) -> "
             current=current.next
         return output
 if __name__ == "__main__":
