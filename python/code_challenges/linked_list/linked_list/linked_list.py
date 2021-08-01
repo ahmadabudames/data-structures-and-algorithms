@@ -42,6 +42,47 @@ class LinkedList:
             output = output + f"({value}) -> "
             current=current.next
         return output
+
+    def append(self, value):
+
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            return
+        last = self.head
+        while (last.next):
+            last = last.next
+
+        last.next =  new_node
+
+
+    def insertBefore(self ,value, new_data):
+
+        current = self.head
+        if current.value==value:
+            self.insert(new_data)
+        else:
+          while current:
+
+             if current.next.value==value :
+                nextvalue=current.next
+                current.next=Node(new_data)
+                current.next.next=nextvalue
+                break
+             current=current.next
+
+    def insertAfter(self, value, new_data):
+
+        current = self.head
+        while current:
+
+            if current.value==value :
+                nextvalue=current.next
+                current.next=Node(new_data)
+                current.next.next=nextvalue
+                break
+            current=current.next
+
 if __name__ == "__main__":
     linked_list = LinkedList()
     linked_list.insert(2)
@@ -51,6 +92,7 @@ if __name__ == "__main__":
     linked_list.insert(10)
     linked_list.insert(12)
     linked_list.insert(14)
+
     print(linked_list.__str__())
 
 
