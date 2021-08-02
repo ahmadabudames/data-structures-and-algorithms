@@ -130,8 +130,65 @@ def test_insert_after_the_last_node():
     assert actual==expected
 
 
+def test_k_is_greater_than_the_length():
+    test_k=LinkedList()
+    test_k.insert(1)
+    test_k.insert(3)
+    test_k.insert(8)
+    test_k.insert(2)
+
+    test_k.NthFromLast(4)
+    actual=test_k.__str__()
+    expected="exception"
+    assert actual==expected
 
 
+def test_ths_same_of_length():
+    test_k=LinkedList()
+    test_k.insert(1)
+    test_k.insert(3)
+    test_k.insert(8)
+    test_k.insert(2)
+    test_k.NthFromLast(3)
+    actual=test_k.__str__()
+    expected='(2) -> (8) -> (3) -> (1) -> none'
+    assert actual==expected
+
+
+def test_not_a_positive_integer():
+    test_k=LinkedList()
+    test_k.insert(1)
+    test_k.insert(3)
+    test_k.insert(8)
+    test_k.insert(2)
+    test_k.NthFromLast(-1)
+    actual=test_k.__str__()
+    expected='(2) -> (8) -> (3) -> (1) -> none'
+    assert actual==expected
+
+def test_linked_list_is_of_a_size_1():
+    test_k=LinkedList()
+    test_k.insert(1)
+    test_k.insert(3)
+    test_k.insert(8)
+    test_k.insert(2)
+    test_k.NthFromLast(1)
+    actual=test_k.__str__()
+    expected='(2) -> (8) -> (3) -> (1) -> none'
+    assert actual==expected
+
+
+def test_k_in_the_middle():
+    test_k=LinkedList()
+    test_k.insert(1)
+    test_k.insert(3)
+    test_k.insert(8)
+    test_k.insert(2)
+    test_k.insert(5)
+    test_k.NthFromLast(2)
+    actual=test_k.__str__()
+    expected='(5) -> (2) -> (8) -> (3) -> (1) -> none'
+    assert actual==expected
 
 
 
