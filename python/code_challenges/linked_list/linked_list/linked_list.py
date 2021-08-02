@@ -83,15 +83,30 @@ class LinkedList:
                 break
             current=current.next
 
+    def NthFromLast(self, k):
+        if k<0:
+            print("no negative input")
+        list_of_value=[]
+        current = self.head
+        while current:
+            list_of_value+=[current.value]
+            current = current.next
+        if k == 0:
+            print(list_of_value[-1])
+        else:
+            if k > len(list_of_value):
+                print("exception")
+            print(list_of_value[(k*-1)-1])
+
+
 if __name__ == "__main__":
     linked_list = LinkedList()
     linked_list.insert(2)
     linked_list.insert(4)
     linked_list.insert(6)
     linked_list.insert(8)
-    linked_list.insert(10)
-    linked_list.insert(12)
-    linked_list.insert(14)
+
+    linked_list.NthFromLast(4)
 
     print(linked_list.__str__())
 
