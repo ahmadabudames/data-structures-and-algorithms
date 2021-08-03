@@ -98,16 +98,19 @@ class LinkedList:
                 print("exception")
             print(list_of_value[(k*-1)-1])
 
+    
+
+
+
+
+
+
 
 if __name__ == "__main__":
     linked_list = LinkedList()
-    linked_list.insert(2)
-    linked_list.insert(4)
-    linked_list.insert(6)
-    linked_list.insert(8)
-
-    linked_list.NthFromLast(4)
-
-    print(linked_list.__str__())
+    list1=linked_list
+    list2=linked_list
+    print(list1.__str__())
+    print(list1.__str__())
 
 
