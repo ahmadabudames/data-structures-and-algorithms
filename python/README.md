@@ -78,9 +78,13 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 # the solution:-
 
+<<<<<<< HEAD
+![insert_shift_list](insert_shift_list/code02.jpg)
+=======
 ![array-binary-search](array-binary-search/array-binary-search.jpg)
 
 
 
+>>>>>>> 6cb742efdfece09789dfefb211037b0323822b44
 
 
