@@ -3,27 +3,24 @@ class Node:
         self.left = None
         self.right = None
         self.data = data
-
-
-def breadthfirst(root_value):
-
-    if root_value is None:
+def breadthfirst(root):
+    if root is None:
         return
-    list = []
+    my_list = []
+    reusult=[]
+    reusult.append(root.data)
+    my_list.append(root)
+    while(len(my_list) > 0):
 
-    list.append(root_value)
-
-    while(len(list) > 0):
-
-        print (list[0].data)
-        node = list.pop(0)
-
+        node = my_list.pop(0)
         if node.left is not None:
-            list.append(node.left)
-
+            my_list.append(node.left)
+            reusult.append(node.left.data)
         if node.right is not None:
-            list.append(node.right)
-    
+            my_list.append(node.right)
+            reusult.append(node.right.data)
+    return reusult
+
 
 root = Node(2)
 root.left = Node(7)
@@ -34,7 +31,4 @@ root.right.right = Node(9)
 root.left.right.left = Node(5)
 root.left.right.right = Node(11)
 root.right.right.left = Node(4)
-
-breadthfirst(root)
-
-
+print(breadthfirst(root))
