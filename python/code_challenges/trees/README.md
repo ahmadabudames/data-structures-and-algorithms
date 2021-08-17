@@ -5,4 +5,13 @@
 
 # breadth-first whiteboard:-
 
-![](image/breadth_first.jpg)
+![](image/breadth-first.jpg)
+
+
+# tree-fizz-buzz whiteboard:-
+
+![](trees/image/fizz_buzz.jpg)
+
+
+
+

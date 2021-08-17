@@ -1,17 +1,20 @@
+from typing import final
+
+
 class Binary_s_tree:
+
     def __init__(self,data=None,left=None,right=None):
         self.data = data
         self.left = left
         self.right = right
-        self.size = 0
-
+        self.size = 1
     def insert(self,data):
         if self.data == data:
             return False #     duplicate data
         elif self.data > data:
             if self.left is not None:
-                return self.left.insert(data)
                 self.size+=1
+                return self.left.insert(data)
             else:
                 self.left=Binary_s_tree(data)
                 self.size+=1
@@ -24,6 +27,7 @@ class Binary_s_tree:
                  self.right = Binary_s_tree(data)
                  self.size+=1
                  return True
+
 
     def find(self, data):
         if self.data == data:
@@ -39,65 +43,66 @@ class Binary_s_tree:
             else:
                 return self.right.find(data)
 
+
     def preorder(self):
         if self is not None:
             print(self.data ,end="-->")
             if self.left is not None:
                 self.left.preorder()
-
             if self.right is not None:
                 self.right.preorder()
 
+
     def inorder(self):
-        if self is not None:
-            if self.left is not None:
-                self.left.inorder()
-            print(self.data ,end="-->")
-            if self.right is not None:
-                self.right.inorder()
+        elements=[]
+        if self.left:
+            elements+=self.left.inorder()
+        elements.append(self.data)
+        if self.right:
+            elements+=self.right.inorder()
+        return elements
 
     def postorder(self):
         if self is not None:
             if self.left is not None:
                 self.left.postorder()
-
             if self.right is not None:
                 self.right.postorder()
             print(self.data , end=" ")
             return
-
     def is_empty(self):
         return self.size == 0
-
     def __str__(self):
         return self.data
-
-    def max(self):
-        if not self.data:
-         return "Tree is Empty"
-        self.max=self.data.value
-        def tree(node):
-            if node.value>self.max:
-                self.max=node.value
-            if node.left:
-                tree(node.left)
-            if node.right:
-                tree(node.right)
-            return self.max
-        return tree(self.data)
+    def max_tree_value(self):
+       my_final =self.inorder()
+       return my_final[len(my_final)-1]
 
 
+    def fizz_buzz(self):
+        my_final = self.inorder()
+        final = []
+        for i in my_final:
+            if i % 3 == 0 and i % 5 == 0:
+                final.append("FizzBuzz")
+            elif i % 3 == 0 :
+                final.append("Fizz")
+            elif i % 5 == 0 :
+                final.append("Buzz")
+            else:
+                final.append(i)
+        return final
 
-if __name__=="main":
- tree = Binary_s_tree(10)
- tree.insert(15)
 
- tree.insert(20)
- tree.insert(13)
- tree.insert(7)
- tree.insert(4)
- tree.insert(9)
-
-
- tree.inorder()
- print()
+if __name__ == '__main__':
+    tree = Binary_s_tree(10)
+    tree.insert(3)
+    tree.insert(5)
+    tree.insert(7)
+    tree.insert(8)
+    tree.insert(15)
+    tree.insert(21)
+    tree.insert(20)
+    tree.insert(200)
+    print(tree.inorder())
+    print(tree.fizz_buzz())
