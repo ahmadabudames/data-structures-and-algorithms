@@ -5,4 +5,4 @@
 
 # breadth-first whiteboard:-
 
-![](image/breadth-first.jpg)
+![](image/breadth_first.jpg)
